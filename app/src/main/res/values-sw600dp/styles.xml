@@ -1,0 +1,5 @@
+<resources>
+
+    <style name="TextAppearanceDetailHeading" parent="TextAppearance.AppCompat.Display2"/>
+
+</resources>

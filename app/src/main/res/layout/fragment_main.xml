@@ -8,12 +8,12 @@
     <GridView android:id="@+id/gridview_movies"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:columnWidth="@dimen/gridview_column_width"
-              android:numColumns="auto_fit"
-              android:verticalSpacing="@dimen/gridview_vertical_spacing"
-              android:horizontalSpacing="@dimen/gridview_horizontal_spacing"
-              android:scrollbarStyle="outsideInset"
-              android:padding="@dimen/gridview_padding"
+              android:numColumns="@integer/gridview_columns"
+              android:verticalSpacing="@dimen/gridview_spacing"
+              android:horizontalSpacing="@dimen/gridview_spacing"
+              android:padding="@dimen/gridview_spacing"
+              android:stretchMode="columnWidth"
+              android:longClickable="false"
         />
 
 </RelativeLayout>

@@ -13,23 +13,36 @@
     <string name="action_refresh">Refresh</string>
 
     <!-- Settings -->
-    <string name="pref_sort_label">Sort Order</string>
-    <string name="pref_sort_label_popular">Popular</string>
-    <string name="pref_sort_label_top_rated">Top Rated</string>
+    <string name="pref_type_label">Movie Types</string>
+    <string name="pref_type_label_favorites">Favorites</string>
+    <string name="pref_type_label_popular">Popular</string>
+    <string name="pref_type_label_top_rated">Top Rated</string>
 
+    <string name="pref_type_favorites" translatable="false">favorites</string>
+    <string name="pref_type_popular" translatable="false">popular</string>
+    <string name="pref_type_top_rated" translatable="false">top_rated</string>
 
-    <string name="pref_sort_key" translatable="false">SORT_ORDER</string>
-
-    <string name="pref_sort_popular" translatable="false">popular</string>
-    <string name="pref_sort_top_rated" translatable="false">top_rated</string>
-    <string name="pref_sort_default" translatable="false">@string/pref_sort_popular</string>
+    <string name="pref_type_key" translatable="false">MOVIE_TYPE</string>
+    <string name="pref_type_default" translatable="false">@string/pref_type_popular</string>
 
     <!-- Detail layout -->
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+
     <string name="format_release_date">
-        Release Date: <xliff:g id="release_date">%1$tB %1$te, %1$tY</xliff:g>
+        <xliff:g id="release_date">%1$tY</xliff:g>
+    </string>
+
+    <string name="format_runtime">
+        <xliff:g id="runtime">%dmin</xliff:g>
     </string>
 
     <string name="format_user_rating">
-        User Rating: <xliff:g id="user rating">%1.2f</xliff:g>
+        <xliff:g id="user rating">%1.1f/10</xliff:g>
     </string>
+    <string name="pref_last_access_key">LAST_ACCESS</string>
+
+    <string name="not_a_favorite">Not a favorite</string>
+    <string name="a_favorite">a favorite</string>
+    <string name="favorite">Favorite</string>
 </resources>

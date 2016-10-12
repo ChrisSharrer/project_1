@@ -1,58 +1,169 @@
-<!-- Master layout. -->
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/detail_margin">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin">
-
-    <TextView
-        android:id="@+id/detail_movie_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:text="Movie Title"/>
-
-
-        <ImageView
-            android:id="@+id/detail_poster"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:minWidth="255dp"
-            tools:minHeight="383dp"
-            tools:background="#aaaaaa"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"/>
+        android:padding="@dimen/screen_padding"
+        android:weightSum="1">
 
         <TextView
-            android:id="@+id/detail_release_date"
+            android:id="@+id/detail_movie_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            tools:text="Release Date: July 4, 1976" />
+            android:textAppearance="@style/TextAppearanceDetailHeading"
+            tools:text="Movie Title: The Awakening"
+            />
 
-        <TextView
-            android:id="@+id/detail_user_rating"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/paragraph_spacing"
+            android:layout_marginTop="@dimen/paragraph_spacing"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            tools:text="User Rating: 9.99"/>
+            >
+
+            <ImageView
+                android:id="@+id/detail_poster"
+                android:layout_width="255dp"
+                android:layout_height="383dp"
+                android:contentDescription="Movie poster"
+                tools:background="#aaaaaa"
+                tools:minHeight="383dp"
+                tools:minWidth="255dp"/>
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/paragraph_spacing"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/detail_release_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    tools:text="2015"
+                    android:paddingBottom="@dimen/paragraph_spacing"/>
+
+                <TextView
+                    android:id="@+id/detail_runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    tools:text="120min"
+                    android:paddingBottom="@dimen/paragraph_spacing"/>
+
+                <TextView
+                    android:id="@+id/detail_user_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    tools:text="8.1/10"
+                    android:paddingBottom="@dimen/paragraph_spacing"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/detail_touch"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ViewSwitcher
+                        android:id="@+id/detail_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:animateFirstView="false"
+                        android:inAnimation="@anim/grow_and_spin"
+                        android:outAnimation="@anim/shrink_and_spin"
+                        android:visibility="invisible"
+                        tools:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/star_off"
+                            android:layout_width="@dimen/detail_icon_size"
+                            android:layout_height="@dimen/detail_icon_size"
+                            app:srcCompat="@drawable/star_off"
+                            android:contentDescription="@string/not_a_favorite"
+                            android:scaleType="centerCrop"
+                            android:background="?android:attr/colorBackground"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <ImageView
+                            android:id="@+id/star_on"
+                            android:layout_width="@dimen/detail_icon_size"
+                            android:layout_height="@dimen/detail_icon_size"
+                            app:srcCompat="@drawable/star_on"
+                            android:contentDescription="@string/not_a_favorite"
+                            android:scaleType="centerCrop"
+                            android:background="?android:attr/colorBackground"
+                            android:layout_gravity="center_horizontal"/>
+                    </ViewSwitcher>
+
+                    <TextView
+                        android:id="@+id/detail_favorite_caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/favorite"
+                        android:visibility="invisible"
+                        android:gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/detail_plot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paragraph_spacing"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            tools:text="Blah blah blah. Yadda yadda yadda."
-            android:layout_marginTop="16dp"/>
+            tools:text="Now is the time for all good men to come to the aid of the party. The quick brown fox jumps over the lazy dog. This is a test of the emergency broadcast system. Blah blah blah. Yadda yadda yadda."
+            />
 
+
+        <TextView
+            android:id="@+id/detail_heading_trailers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paragraph_spacing"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:text="@string/trailers"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listview_trailers"
+            android:layout_marginTop="2dp"
+            />
+
+        <TextView
+            android:id="@+id/detail_heading_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paragraph_spacing"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:text="@string/reviews"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listview_reviews"
+            android:layout_marginTop="2dp"
+            />
 
     </LinearLayout>
 

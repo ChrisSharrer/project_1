@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="pref_sort_options">
-        <item>@string/pref_sort_label_popular</item>
-        <item>@string/pref_sort_label_top_rated</item>
+    <string-array name="pref_type_options">
+        <item>@string/pref_type_label_popular</item>
+        <item>@string/pref_type_label_top_rated</item>
+        <item>@string/pref_type_label_favorites</item>
     </string-array>
-    <string-array name="pref_sort_values">
-        <item>@string/pref_sort_popular</item>
-        <item>@string/pref_sort_top_rated</item>
+    <string-array name="pref_type_values">
+        <item>@string/pref_type_popular</item>
+        <item>@string/pref_type_top_rated</item>
+        <item>@string/pref_type_favorites</item>
     </string-array>
 </resources>

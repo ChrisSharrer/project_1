@@ -23,7 +23,7 @@ public class SettingsActivity extends CompatPreferenceActivity implements Prefer
 
         // For all preferences, attach an OnPreferenceChangeListener so the UI summary can be
         // updated when the preference changes.
-        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_sort_key)));
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_type_key)));
     }
 
 
